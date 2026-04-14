@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 12:51:16 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 17:02:27 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 14:54:33 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 17:22:26 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	c_char;
-	unsigned char	*b_str;
+	size_t	index;
 
-	c_char = (unsigned char) c;
-	b_str = (unsigned char *) b;
-	while (len--)
-		*b_str++ = c_char;
-	return (b);
+	index = 0;
+	while (index < n)
+	{
+		*((unsigned char *) dst + index) = *((unsigned char *) src + index);
+		index++;
+	}
+	return (dst);
 }
 
 /* #include <unistd.h>
 int	main()
 {
-	unsigned char b_str[18] = "xxxxxxxxxxxxxxxxx";
-	int	i;
-	
-	memset(b_str, 121, 5);
+	char *src ="abcdefghij";
+	unsigned char dst[11] = "0123456789";
+	unsigned int i;
+
+	ft_memcpy(dst, src, 3);
+
 	i = 0;
-	while(b_str[i] != 0)
-		write(1,&b_str[i++],1);
-	return(0);
+	while(dst[i])
+		write(1, &dst[i++], 1);
+	return (0);
 } */
