@@ -1,19 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 14:33:17 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 12:06:13 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 12:06:39 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 12:08:50 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int character)
+int	ft_isprint(int c)
 {
-	if (character >= 48 && character <= 57)
-		return (1);
-	else
-		return (0);
+	
 }

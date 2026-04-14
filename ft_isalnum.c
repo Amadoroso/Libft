@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 14:33:17 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 12:06:13 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/13 14:51:11 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 12:06:21 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int character)
+int	ft_isalnum(int c)
 {
-	if (character >= 48 && character <= 57)
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 		return (1);
-	else
-		return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
+
+/* #include <unistd.h>
+int	main()
+{
+	char	writer;
+
+	writer = (ft_isalnum('2') + 48);
+	write(1, &writer, 1);
+	return(0);
+} */

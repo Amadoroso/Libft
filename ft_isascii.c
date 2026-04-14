@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 14:33:17 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 12:06:13 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 11:53:20 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 12:06:05 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int character)
+int	ft_isascii(int c)
 {
-	if (character >= 48 && character <= 57)
+	if (c >= 0 && c <= 127)
 		return (1);
-	else
-		return (0);
+	return (0);
 }
+
+/* #include <unistd.h>
+int	main()
+{
+	char	writer;
+
+	writer = ft_isascii('\0') + 48;
+	write(1, &writer, 1);
+	return (0);
+} */
