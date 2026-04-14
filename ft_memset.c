@@ -1,28 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 12:06:39 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 12:39:54 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 12:51:16 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 12:51:17 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
-{
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
-}
-
-/* #include <unistd.h>
-int	main()
-{
-	char	writer;
-
-	writer = ft_isprint('A') + 48;
-	write(1, &writer, 1);
-	return (0);
-} */

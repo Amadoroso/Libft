@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 12:06:39 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 12:39:54 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 12:21:09 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 12:50:46 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	len;
+
+	len = 0;
+	while (*str++)
+		len++;
+	return (len);
 }
 
-/* #include <unistd.h>
+/* #include <stdio.h>
 int	main()
 {
-	char	writer;
-
-	writer = ft_isprint('A') + 48;
-	write(1, &writer, 1);
+	printf("%zu",ft_strlen("ola boa tarde"));
 	return (0);
 } */
