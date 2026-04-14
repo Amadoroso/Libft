@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/14 12:51:16 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 14:53:51 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/14 14:34:26 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/14 14:54:00 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*memset(void *b, int c, size_t len)
+void	bzero(void *s, size_t n)
 {
-	unsigned char	c_char;
-	unsigned char	*b_str;
-
-	c_char = (unsigned char) c;
-	b_str = (unsigned char *) b;
-	while (len--)
-		*b_str++ = c_char;
-	return (b);
+	if (n != 0)
+	{
+		while (n--)
+			*((unsigned char *) s + n) = '\0';
+	}
 }
 
 /* #include <unistd.h>
 int	main()
 {
-	unsigned char b_str[18] = "xxxxxxxxxxxxxxxxx";
-	int	i;
+	unsigned char s[10] = "Ola Adeus";
+	int index;
 	
-	memset(b_str, 121, 5);
-	i = 0;
-	while(b_str[i++] != 0)
-		write(1,&b_str[i],1);
-	return(0);
+	bzero(s, 5);
+	index = 0;
+	while (s[index++])
+		write(1, &s[index], 1);
+	return (0);
 } */
