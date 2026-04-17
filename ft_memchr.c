@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 16:31:11 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/17 18:03:09 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/17 18:03:33 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/17 18:29:31 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	len;
+#include <string.h>
 
-	len = 0;
-	while (*(s + len))
-		len++;
-	while (len >= 0)
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	while (n-- > 0)
 	{
-		if (*(s + len) == (char) c)
-			return ((char *) s + len);
-		len--;
+		if (*((unsigned char *) s) == (unsigned char) c)
+			return ((void *) s);
+		s++;
 	}
 	return (0);
 }
 
 /* #include <stdio.h>
-#include <string.h>
-int	main()
+int main()
 {
-	printf("%s\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%s\n", strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", strrchr("aaaaBaaaa1aa", 49));
+	printf("%s\n", (char *) ft_memchr("ola adeus", ' ', 20));
+	printf("%p\n", (char *) ft_memchr("ola adeus", ' ', 20));
+	printf("%s\n", (char *) memchr("ola adeus", ' ', 20));
+	printf("%p\n", (char *) memchr("ola adeus", ' ', 20));
 } */

@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 16:31:11 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/17 18:03:09 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/17 17:17:12 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/17 18:01:39 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	len;
+#include <string.h>
 
-	len = 0;
-	while (*(s + len))
-		len++;
-	while (len >= 0)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	if (n == 0)
+		return (0);
+	while ((unsigned char) *s1 == (unsigned char) *s2
+		&& (unsigned char) *s1 != 0 && --n > 0)
 	{
-		if (*(s + len) == (char) c)
-			return ((char *) s + len);
-		len--;
+		s1++;
+		s2++;
 	}
-	return (0);
+	return ((unsigned char) *s1 - (unsigned char) *s2);
 }
 
-/* #include <stdio.h>
-#include <string.h>
+/* #include <string.h>
+#include <stdio.h>
 int	main()
 {
-	printf("%s\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%s\n", strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", strrchr("aaaaBaaaa1aa", 49));
+	printf("%d\n", ft_strncmp("AAz", "AAa", 4));
+	printf("%d\n", strncmp("AAz", "AAa", 4));
 } */

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 16:31:11 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/17 18:03:09 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/17 18:29:53 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/17 19:10:44 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	len;
+#include <string.h>
 
-	len = 0;
-	while (*(s + len))
-		len++;
-	while (len >= 0)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;	
+
+	ptr1 = (unsigned char *) s1;
+	ptr2 = (unsigned char *) s2;
+	if (n == 0)
+		return (0);
+	while (*ptr1 == *ptr2 && --n > 0)
 	{
-		if (*(s + len) == (char) c)
-			return ((char *) s + len);
-		len--;
+		ptr1++;
+		ptr2++;
 	}
-	return (0);
+	return (*ptr1 - *ptr2);
 }
 
 /* #include <stdio.h>
-#include <string.h>
 int	main()
 {
-	printf("%s\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", ft_strrchr("aaaaBaaaa1aa", 49));
-	printf("%s\n", strrchr("aaaaBaaaa1aa", 49));
-	printf("%p\n", strrchr("aaaaBaaaa1aa", 49));
+	printf("%d\n", ft_memcmp("aaa123~", "aaa1234",7));
+	printf("%d\n", memcmp("aaa123~", "aaa1234",7));
+	return (0);
 } */

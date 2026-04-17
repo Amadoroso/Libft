@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 15:31:07 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/17 16:27:26 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/17 17:22:13 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,11 @@ char	*ft_strchr(const char *s, int c)
 }
 
 /* #include <stdio.h>
+#include <string.h>
 int	main()
 {
-	char	*ptr;
-
-	ptr = ft_strchr("aaBaaaaBaaaa",'B');
-
-	printf("%p\n", ptr);
-	printf("%p\n", &ptr);
-	printf("%s\n", ptr);
+	printf("%s\n", ft_strchr("aaaaBaaaBa", -23));
+	printf("%p\n", ft_strchr("aaaaBaaaBa", -23));
+	printf("%s\n", strchr("aaaaBaaaBa", -23));
+	printf("%p\n", strchr("aaaaBaaaBa", -23));
 } */
