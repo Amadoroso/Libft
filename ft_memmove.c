@@ -6,20 +6,21 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 17:23:45 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/14 18:48:15 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:01:49 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t count;
-	
+	size_t	count;
+
 	if (dest > src)
 	{
 		while (n > 0)
 		{
-			n--;			
+			n--;
 			*((unsigned char *) dest + n) = *((unsigned char *) src + n);
 		}
 	}
@@ -28,14 +29,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		count = 0;
 		while (count < n)
 		{
-			*((unsigned char *) dest + count) = *((unsigned char *) src + count);
+			*((unsigned char *) dest + count)
+				= *((unsigned char *) src + count);
 			count++;
 		}
 	}
 	return (dest);
 }
 
-#include <unistd.h>
+/* #include <unistd.h>
 int main()
 {
 	unsigned char src[14] = "Learningisfun";
@@ -47,4 +49,4 @@ int main()
 	while (src[index])
 		write(1, &src[index++], 1);
 	return (0);
-}
+} */
