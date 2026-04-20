@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 19:32:20 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/17 20:13:30 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/17 21:18:40 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,30 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	j_saver;
-	size_t	len_saver;
 
 	if (*little == 0)
 		return ((char *) big);
 	j = 0;
-	while (*(big + j) != 0 && --len > 0)
+	while (*(big + j) != 0 && j < len)
 	{
 		i = 0;
 		if (*(big + j) == *(little + i))
 		{
-			j_saver = j;
-			len_saver = len;
-			while (*(big + j++) == *(little + i++) && --len > 0)
+			while (*(big + j + i) == *(little + i) && j + i < len)
 			{
+				i++;
 				if (*(little + i) == 0)
-					return ((char *) big + j_saver);
+					return ((char *) big + j);
 			}
-			j = j_saver;
-			len = len_saver;
 		}
-		else
-			j++;
+		j++;
 	}
 	return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int main()
 {
-	printf("%s\n",ft_strnstr("abcOla2", "Ola3", 4));
-	printf("%s\n",strnstr("abcOla2", "Ola3", 4));
-}
+	printf("%s\n",ft_strnstr("abc", "abcdef", 5));
+	printf("%s\n",strnstr("abc", "abcdef", 5));
+} */
