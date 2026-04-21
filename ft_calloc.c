@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:46:34 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/21 15:30:13 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:40:34 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	*ft_calloc(size_t nmeb, size_t size)
 
 	max_val = -1;
 	if (nmeb == 0 || size == 0)
-		return (NULL);
+		return (malloc(0));
 	else if (size > max_val / nmeb)
 		return (NULL);
 	else
 	{
 		result = malloc (nmeb * size);
-		if (result == 0)
+		if (!result)
 			return (NULL);
 		return (ft_memset(result, '\0', nmeb * size));
 	}
