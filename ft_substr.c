@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 11:46:34 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/21 16:30:36 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/21 15:42:33 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/21 17:58:41 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 
@@ -47,37 +47,44 @@ void	*ft_calloc(size_t nmeb, size_t size)
 	else
 	{
 		result = malloc (nmeb * size);
-		if (!result)
+		if (result == 0)
 			return (NULL);
 		return (ft_memset(result, '\0', nmeb * size));
 	}
 }
 
-/* #include <stdio.h>
-int	main()
+char	*ft_substr(char	const *s, unsigned int start, size_t len)
 {
-	int	*array_1;
-	int	*array_2;
-	size_t	nmeb;
+	char	*sub;
 	size_t	index;
+	size_t	s_len;
+	
+	if (s == NULL)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (sub = (char *) ft_calloc (1, sizeof(char)));
+	if (len > s_len - start)
+		len = s_len - start;
+	sub = (char *) ft_calloc (len + 1, sizeof(char));
+	if (sub == 0)
+		return (NULL);
+	index = 0;
+	while (*(s + start + index) != 0 && len-- > 0)
+	{
+		*(sub + index) = *(s + start + index);
+		index++;
+	}
+	return (sub);
+}
 
-	nmeb = 4;
-	array_1 = (int *) ft_calloc (nmeb, sizeof(int));
-	array_2 = (int *) calloc (nmeb, sizeof(int));
-	index = 0;
-	while (index < nmeb)
-	{
-		printf("%d", *(array_1 + index++));
-		printf("%c", ' ');
-	}
-	printf("%c", '\n');
-	index = 0;
-	while (index < nmeb)
-	{
-		printf("%d", *(array_2 + index++));
-		printf("%c", ' ');	
-	}
-	free(array_1);
-	free(array_2);
-	return (0);
+/* #include <stdio.h>
+int main()
+{
+	char const *str;
+	char *sub_str;
+	str = "abcdefgh123456";
+	sub_str = ft_substr(str, 3, 5);
+	printf("%s", sub_str);
+	free(sub_str);
 } */
