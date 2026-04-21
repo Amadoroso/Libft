@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 11:46:34 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/21 14:54:50 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/21 15:06:50 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,7 @@ int	main()
 		printf("%d", *(array_2 + index++));
 		printf("%c", ' ');	
 	}
+	free(array_1);
+	free(array_2);
 	return (0);
 } */
