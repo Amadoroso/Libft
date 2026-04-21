@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 15:42:33 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/21 17:58:41 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/21 18:12:48 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_substr(char	const *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	index;
 	size_t	s_len;
-	
+
 	if (s == NULL)
 		return (NULL);
 	s_len = ft_strlen(s);
