@@ -6,7 +6,7 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 16:44:37 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/20 18:31:19 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/21 14:56:43 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	{
 		if (*nptr == '-')
 			neg = -1;
-		nptr++;	
+		nptr++;
 	}
 	while (*nptr != 0 && (*nptr >= 48 && *nptr <= 57))
 	{
