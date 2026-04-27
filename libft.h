@@ -6,12 +6,14 @@
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 14:25:12 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/27 15:04:25 by apinho-a         ###   ########.fr       */
+/*   Updated: 2026/04/27 16:32:31 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef struct	s_list
+#include <stdlib.h>
+
+typedef struct s_list
 {
 	void			*content;
-	struct	s_list	*next;
+	struct s_list	*next;
 }					t_list;

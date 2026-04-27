@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinho-a <apinho-a@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 14:43:44 by apinho-a          #+#    #+#             */
-/*   Updated: 2026/04/27 16:31:55 by apinho-a         ###   ########.fr       */
+/*   Created: 2026/04/27 15:37:50 by apinho-a          #+#    #+#             */
+/*   Updated: 2026/04/27 16:32:38 by apinho-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+/* static t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_struct;
-
+	t_list *new_struct;
 	new_struct = (t_list *) malloc(sizeof(t_list));
 	if (new_struct == NULL)
 		return (NULL);
 	new_struct->content = content;
 	new_struct->next = NULL;
 	return (new_struct);
-}
-/* #include <stdio.h>
-int	main()
+} */
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *test_struct;
+	new->next = *(lst + 0);
+	*(lst + 0) = new;
+}
 
-	test_struct = ft_lstnew("hello");
-	printf("%s\n", (char *) test_struct->content);
-	if (test_struct->next == NULL)
-		printf("%s\n", "next is correct");
-	free(test_struct);
+/* #include <stdio.h>
+int	main ()
+{
+	t_list *old;
+	t_list *new;
+	t_list **lst;
+
+	old = ft_lstnew("goodbye");
+	lst = &old;
+	printf("%s\n", (char *) (*(lst + 0))->content);
+	new = ft_lstnew("hello");
+	ft_lstadd_front(lst, new);
+	
+	printf("%s\n", (char *) (*(lst + 0))->content);
 	return (0);
 } */
